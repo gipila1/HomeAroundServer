@@ -2,6 +2,7 @@ package com.homearoundn.homearoundserver.rentmodel.homeaddsinfo
 
 import org.apache.catalina.connector.Response
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.data.jpa.repository.Query
 import org.springframework.stereotype.Service
 import org.springframework.web.bind.annotation.RequestBody
 
@@ -64,26 +65,33 @@ class HouseAddsInfoDao {   //DAO means Data Access Object
         val filePath: String = houseaddsInfo.
         return Files.readAllBytes( Files filePath)).toPath())
     }*/
-
+    
 
     fun getAllHouses(): List<HouseAddsInfo> {
         val houses = mutableListOf<HouseAddsInfo>()
         houseaddsinfoDao.findAll().forEach { houses.add(it) }
         return houses
     }
+    fun getAllUsers(): List<UserRegistrationInfo>{
+        val users = mutableListOf<UserRegistrationInfo>()
+        userregistrationinfoDao.findAll().forEach { users.add(it) }
 
-    //@Query("SELECT HouseAddsInfo FROM HouseAddsInfo WHERE housePlace LIKE :search ")
+        return users
+    }
 
-    //fun getallfromfliter(search: String): List<HouseAddsInfo>{
-    //    val house = mutableListOf<HouseAddsInfo>()
-    //    houseaddsinfoDao.findAll().forEach { house.add(it) }
-    //    return house
-    //}
-   //fun gethouseDetails(): HouseAddsInfo {
-    //   val house = HouseAddsInfo()
-    //   houseaddsinfoDao.findById(house.id)
-    //   return house
-    //}
+   /* @Query("SELECT HouseAddsInfo FROM HouseAddsInfo WHERE housePlace LIKE :search ")
+
+    fun getallfromfliter(search: String): List<HouseAddsInfo>{
+        val house = mutableListOf<HouseAddsInfo>()
+        houseaddsinfoDao.findAll().forEach { house.add(it) }
+        return house
+    }*/
+
+//   fun gethouseDetails(): HouseAddsInfo {
+//       val house = HouseAddsInfo()
+//       houseaddsinfoDao.findById(house.id)
+//      return house
+//   }
 
     fun delete(houseAddsInfo: HouseAddsInfo) {
         houseaddsinfoDao.delete(houseAddsInfo)

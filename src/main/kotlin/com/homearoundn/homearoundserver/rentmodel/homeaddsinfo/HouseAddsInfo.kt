@@ -12,6 +12,7 @@ open class HouseAddsInfo { //annotation class Builder  //@Builder //@Data
     var housePlace: String? = null
     var squeredMetres: Double = 0.00
     var costOfRent: Int = 0
+    var costOfSale: Int = 0
     var houseDetails: String? = null
     var floor: String? = null
     var yearConstructed: Int = 0
@@ -23,6 +24,10 @@ open class HouseAddsInfo { //annotation class Builder  //@Builder //@Data
     var energyClass: String? = null
     var airConditioning: String? = null
     var costOfSharedExpenses: Double = 0.00
+    var rentOrSell: String? = null
+    var dateleaving: String? = null
+    
+
     //var type: String? = null
     //var name: String? = null  //for storing a photo to database
     //lateinit var image1: String  // this is the filepath of the pictures folder    (older) binary format for saving a photo to database
@@ -45,73 +50,76 @@ open class HouseAddsInfo { //annotation class Builder  //@Builder //@Data
                 ", Ενεργειακή Κλάση='" + energyClass + '\'' +
                 ", Kλιματισμός='" + airConditioning + '\'' +
                 ", Κοινόχρηστα (αν υπάρχουν μ.ο. κόστους)='" + costOfSharedExpenses + '\'' +
+                ", Ενοικίαση ή Πώληση='" + rentOrSell + '\'' +
+                ", Ημ.Αποχώρησης='" + dateleaving + '\'' +
+                ", Τιμή πώλησης='" + costOfSale + '\'' +
                 '}'
     }
 
-    fun getid()=id
-    fun setid(value: Int) {
-        id=value
-    }
-    fun gethouseName()=houseName
-    fun sethouseName(value: String?) {
-        houseName=value
-    }
-    fun gethousePlace()=housePlace
-    fun sethousePlace(value: String?) {
-        housePlace=value
-    }
-    fun getsqueredMetres()=squeredMetres
-    fun setsqueredMetres(value: Double) {
-        squeredMetres=value
-    }
-    fun getcostOfRent()=costOfRent
-    fun setcostOfRent(value: Int) {
-        costOfRent=value
-    }
-    fun gethouseDetails()=houseDetails
-    fun sethouseDetails(value: String?) {
-        houseDetails=value
-    }
-    fun getfloor()=floor
-    fun setfloor(value: String?) {
-        floor=value
-    }
-    fun getyearConstructed()=yearConstructed
-    fun setyearConstructed(value: Int) {
-        yearConstructed=value
-    }
-    fun getaddressRoadNum()=addressRoadNum
-    fun setaddressRoadNum(value: String?) {
-        addressRoadNum=value
-    }
-    fun getpostalCode()=postalCode
-    fun setpostalCode(value: Int) {
-        postalCode=value
-    }
-    fun getbedrooms()=bedrooms
-    fun setbedrooms(value: Int) {
-        bedrooms=value
-    }
-    fun getbathrooms()=bathrooms
-    fun setbathrooms(value: Int) {
-        bathrooms=value
-    }
-    fun getstate()=state
-    fun setstate(value: String?) {
-        state=value
-    }
-    fun getenergyClass()=energyClass
-    fun setenergyClass(value: String?) {
-        energyClass=value
-    }
-    fun getairConditioning()=airConditioning
-    fun setairConditioning(value: String?) {
-        airConditioning=value
-    }
-    fun getcostOfSharedExpenses ()=costOfSharedExpenses
-    fun setcostOfSharedExpenses (value: Double) {
-        costOfSharedExpenses =value
-    }
+//    fun getId()=id
+//    fun setId(value: Int) {
+//        id=value
+//    }
+//    fun getHouseName()=houseName
+//    fun setHouseName(value: String?) {
+//        houseName=value
+//    }
+//    fun getHousePlace()=housePlace
+//    fun setHousePlace(value: String?) {
+//        housePlace=value
+//    }
+//    fun getSqueredMetres()=squeredMetres
+//    fun setSqueredMetres(value: Double) {
+//        squeredMetres=value
+//    }
+//    fun getCostOfRent()=costOfRent
+//    fun setCostOfRent(value: Int) {
+//        costOfRent=value
+//    }
+//    fun getHouseDetails()=houseDetails
+//    fun setHouseDetails(value: String?) {
+//        houseDetails=value
+//    }
+//    fun getFloor()=floor
+//    fun setFloor(value: String?) {
+//        floor=value
+//    }
+//    fun getYearConstructed()=yearConstructed
+//    fun setYearConstructed(value: Int) {
+//        yearConstructed=value
+//    }
+//    fun getAddressRoadNum()=addressRoadNum
+//    fun setAddressRoadNum(value: String?) {
+//        addressRoadNum=value
+//    }
+//    fun getPostalCode()=postalCode
+//    fun setPostalCode(value: Int) {
+//        postalCode=value
+//    }
+//    fun getBedrooms()=bedrooms
+//    fun setBedrooms(value: Int) {
+//        bedrooms=value
+//    }
+//    fun getBathrooms()=bathrooms
+//    fun setBathrooms(value: Int) {
+//        bathrooms=value
+//    }
+//    fun getState()=state
+//    fun setstate(value: String?) {
+//        state=value
+//    }
+//    fun getenergyClass()=energyClass
+//    fun setenergyClass(value: String?) {
+//        energyClass=value
+//    }
+//    fun getAirConditioning()=airConditioning
+//    fun setAirConditioning(value: String?) {
+//        airConditioning=value
+//    }
+//    fun getCostOfSharedExpenses ()=costOfSharedExpenses
+//    fun setCostOfSharedExpenses (value: Double) {
+//        costOfSharedExpenses =value
+//    }
 
 }
 

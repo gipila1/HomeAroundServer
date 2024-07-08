@@ -18,26 +18,32 @@ class HomeAroundServerApplicationTests {
 
 	@Autowired
 	private lateinit var repositorytest: HouseAddsInfoDao
+
+
 	//interface HousesAddsInfoRepository {  //to check
 		//var repository: HouseAddsInfoRepository
 	//@Test
 	fun contextLoads() {
 		val houseAddsInfo = HouseAddsInfo()
-		houseAddsInfo.houseName = "Γκαρσονιέρα 35τμ"
-		houseAddsInfo.housePlace = "Θεσσαλονίκη"
-		houseAddsInfo.squeredMetres = 35.00
-		houseAddsInfo.costOfRent = 300
-		houseAddsInfo.houseDetails = "Γκαρσονιέρα με 1 υπνοδωμάτιο,1 μπάνιο, 35 τμ"
-		houseAddsInfo.floor = "1ος"
-		houseAddsInfo.yearConstructed = 2001
-		houseAddsInfo.addressRoadNum = "Νίκης 7"
-		houseAddsInfo.postalCode = 17553
+		houseAddsInfo.houseName = "Διαμέρισμα 45τμ"
+		houseAddsInfo.housePlace = "Αμπελόκηποι"
+		houseAddsInfo.squeredMetres = 45.00
+		houseAddsInfo.costOfRent = 430
+		houseAddsInfo.costOfSale = 0
+		houseAddsInfo.houseDetails = "Διαμέρισμα ιδανικό για φοιτητές, κοντά στο μετρό με 1 υπνοδωμάτια,1 μπάνιο, στον 2ο όροφο"
+		houseAddsInfo.floor = "2ος"
+		houseAddsInfo.yearConstructed = 1982
+		houseAddsInfo.addressRoadNum = "Λουίζης Ριανκούρ 41"
+		houseAddsInfo.postalCode = 11523
 		houseAddsInfo.bedrooms = 1
 		houseAddsInfo.bathrooms = 1
-		houseAddsInfo.state = "Νέο"
-		houseAddsInfo.energyClass = "Δ'"
+		houseAddsInfo.state = "Καλή"
+		houseAddsInfo.energyClass = "Β'"
 		houseAddsInfo.airConditioning = "Κεντρική Θέρμανση"
-		houseAddsInfo.costOfSharedExpenses = 20.00
+		houseAddsInfo.costOfSharedExpenses = 18.00
+		houseAddsInfo.rentOrSell = "Ενοικίαση"
+		houseAddsInfo.dateleaving = "Άμεσα"
+		//houseAddsInfo.userName = "Tom"
 		//houseAddsInfo.image1 ="\\Users\\HP\\Downloads\\paper-2023-24\\PictureUploads\\"
 		repositorytest.save(houseAddsInfo)
 	}
@@ -45,13 +51,13 @@ class HomeAroundServerApplicationTests {
 	@Test
 	fun contextLoads1() {
 		val userregistrationinfo = UserRegistrationInfo()
-		userregistrationinfo.fullName = "Γεωργίου"
-		userregistrationinfo.userName = "Tom"
-		userregistrationinfo.email = "tom2003@gmail.com"
-		userregistrationinfo.phoneNumber = "30697445500"
-		userregistrationinfo.code = "tom2003"
-		userregistrationinfo.confirmationCode = "tom2003"
-		//houseAddsInfo.image1 ="\\Users\\HP\\Downloads\\paper-2023-24\\PictureUploads\\"
+		userregistrationinfo.fullName = "Στέλιος Σωτηρόπουλος"
+		userregistrationinfo.userName = "sotir.s"
+		userregistrationinfo.email = "sotir.s@gmail.com"
+		userregistrationinfo.phoneNumber = "6973302487"
+		userregistrationinfo.code = "sotir.s1"
+		userregistrationinfo.confirmationCode = "sotir.s1"
+		//houseAddsInfo.image1 ="\\Users\\HP\\ownloads\\paper-2023-24\\PictureUploads\\"
 		repositorytest.save(userregistrationinfo)
 	}
 
@@ -76,5 +82,13 @@ class HomeAroundServerApplicationTests {
 		val houseAddsInfo = HouseAddsInfo()
 			repositorytest.delete(houseAddsInfo)
 	}
+
+	//@Test
+	fun getAllUsers() {
+		val users = repositorytest.getAllUsers()
+		println(users)
+	}
+
+	//@Test
 
 }

@@ -3,10 +3,11 @@ package com.homearoundn.homearoundserver.controller
 import com.homearoundn.homearoundserver.rentmodel.homeaddsinfo.*
 import org.apache.catalina.connector.Response
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.data.jpa.repository.Query
 import org.springframework.web.bind.annotation.*
 
 
-@RestController   // A different kind of Repository
+@RestController   // A different kind of Repository This is like Autoscan
 class HouseAddsInfoController {
 
     @Autowired
@@ -24,14 +25,14 @@ class HouseAddsInfoController {
         return houses
     }
 
-    /*@GetMapping("/houseaddsinfo/get-housedetails")
-    fun gethouseDetails(): HouseAddsInfo {
-        val house = HouseAddsInfo()
-        houseaddsinfoDao.findById(house.id)
-
-        return house
-    }
-    @GetMapping("/houseaddsinfo/getfromsearch")   // In order to get all housesinfo from server
+//    @GetMapping("/houseaddsinfo/get-housedetails")
+//    fun gethouseDetails(): HouseAddsInfo {
+//        val house = HouseAddsInfo()
+//        houseaddsinfoDao.findById(house.id)
+//
+//        return house
+//    }
+    /*@GetMapping("/houseaddsinfo/getfromsearch")   // In order to get all housesinfo from server
 
     @Query("SELECT HouseAddsInfo FROM HouseAddsInfo WHERE housePlace LIKE :search ")
 
@@ -42,6 +43,14 @@ class HouseAddsInfoController {
         return house
     }*/
 
+    @GetMapping("/userregistrationinfo/get-all")   // In order to get all housesinfo from server
+
+    fun getAllUsers(): List<UserRegistrationInfo>{
+        val users = mutableListOf<UserRegistrationInfo>()
+        userregistrationinfoDao.findAll().forEach { users.add(it) }
+
+        return users
+    }
 
     @PostMapping("/houseaddsinfo/save")   // In order to get all housesinfo from server
 
